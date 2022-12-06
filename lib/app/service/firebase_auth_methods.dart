@@ -19,7 +19,7 @@ class FirebaseAuthMethods {
         password: password,
       );
     } on FirebaseAuthException catch (e) {
-       showSnackBar(context, e.message!);
+      showSnackBar(context, e.message!);
     }
   }
 }

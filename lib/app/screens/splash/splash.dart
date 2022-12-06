@@ -23,35 +23,31 @@ class _SplashState extends State<Splash> {
   }
 
   onboardingRoute() {
-    Navigator.pushReplacement(context, MaterialPageRoute(
-      builder: (context) => const OnboardingScreen()
-    ));
+    Navigator.pushReplacement(context,
+        MaterialPageRoute(builder: (context) => const OnboardingScreen()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        constraints: const BoxConstraints.expand(),
-        color: Colors.black,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset('lib/app/assets/images/splash.png'),
-            const Padding(
-              padding: EdgeInsets.only(top: 35),
-              child: Text(
-                'UpTodo',
-                style: TextStyle(
-                  fontSize: 40,
-                  fontFamily: 'Lato-Bold',
-                  color: Colors.white,
-                ),
-              )
-            )
-          ],
-        )
-      )
-    );
+        body: Container(
+            constraints: const BoxConstraints.expand(),
+            color: Colors.black,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image.asset('lib/app/assets/images/splash.png'),
+                const Padding(
+                    padding: EdgeInsets.only(top: 35),
+                    child: Text(
+                      'UpTodo',
+                      style: TextStyle(
+                        fontSize: 40,
+                        fontFamily: 'Lato-Bold',
+                        color: Colors.white,
+                      ),
+                    ))
+              ],
+            )));
   }
 }

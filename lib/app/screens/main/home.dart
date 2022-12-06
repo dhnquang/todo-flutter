@@ -11,38 +11,33 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.sort),
-        ),
-        title: const Text(
-          'Index',
-          style: TextStyle(
-            fontFamily: 'Lato-Regular',
-            fontSize: 20,
-            color: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          leading: IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.sort),
           ),
-        ),
-        actions: [
-          Container(
-            padding: const EdgeInsets.only(right: 16),
-            child: InkWell(
-              onTap: (){},
-              child: CircleAvatar(
-
-              ),
+          title: const Text(
+            'Index',
+            style: TextStyle(
+              fontFamily: 'Lato-Regular',
+              fontSize: 20,
+              color: Colors.white,
             ),
-          )
-        ],
-      ),
-      body: Text(
-        'home',
-        style: TextStyle(
-          color: Colors.white
+          ),
+          actions: [
+            Container(
+              padding: const EdgeInsets.only(right: 16),
+              child: InkWell(
+                onTap: () {},
+                child: const CircleAvatar(),
+              ),
+            )
+          ],
         ),
-      )
-    );
+        body: const Text(
+          'home',
+          style: TextStyle(color: Colors.white),
+        ));
   }
 }

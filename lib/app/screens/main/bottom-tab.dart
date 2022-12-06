@@ -24,68 +24,64 @@ class _BottomTabScreenState extends State<BottomTabScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: const Color(0xff8687E7),
-        child: const Icon(Icons.add),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: Theme(
-        data: ThemeData(
-          splashColor: Colors.transparent,
-          highlightColor: Colors.transparent,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: const Color(0xff8687E7),
+          child: const Icon(Icons.add),
         ),
-        child: BottomNavigationBar(
-          backgroundColor: const Color(0xff363636),
-          type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_filled),
-              label: 'Index',
-
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month),
-              label: 'Calender',
-            ),
-            BottomNavigationBarItem(
-              icon: SizedBox(
-                width: 100,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: Theme(
+          data: ThemeData(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+          ),
+          child: BottomNavigationBar(
+            backgroundColor: const Color(0xff363636),
+            type: BottomNavigationBarType.fixed,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home_filled),
+                label: 'Index',
               ),
-              label: '',
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calendar_month),
+                label: 'Calender',
+              ),
+              BottomNavigationBarItem(
+                icon: SizedBox(
+                  width: 100,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.timer),
+                label: 'Focuses',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
+            currentIndex: _idxSelected,
+            onTap: (int index) {
+              if (index != 2) {
+                setState(() {
+                  _idxSelected = index;
+                });
+              }
+            },
+            selectedItemColor: const Color(0xff8687E7),
+            unselectedItemColor: const Color.fromRGBO(255, 255, 255, 0.87),
+            selectedLabelStyle: const TextStyle(
+              fontFamily: 'Lato-Regular',
+              fontSize: 12,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.timer),
-              label: 'Focuses',
+            unselectedLabelStyle: const TextStyle(
+              fontFamily: 'Lato-Regular',
+              fontSize: 12,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-          currentIndex: _idxSelected,
-          onTap: (int index) {
-            if (index != 2) {
-              setState(() {
-                _idxSelected = index;
-              });
-            }
-          },
-          selectedItemColor: const Color(0xff8687E7),
-          unselectedItemColor: const Color.fromRGBO(255, 255, 255, 0.87),
-          selectedLabelStyle: const TextStyle(
-            fontFamily: 'Lato-Regular',
-            fontSize: 12,
-          ),
-          unselectedLabelStyle: const TextStyle(
-            fontFamily: 'Lato-Regular',
-            fontSize: 12,
           ),
         ),
-      ),
-      body: screens['$_idxSelected']
-    );
+        body: screens['$_idxSelected']);
   }
 }
-
-

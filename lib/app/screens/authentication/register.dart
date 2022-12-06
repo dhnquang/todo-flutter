@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome5_icons.dart';
-import 'package:todoapp/app/components/text-input.dart';
 import 'package:todoapp/app/service/firebase_auth_methods.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -12,7 +11,6 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -44,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.fromLTRB(16,24,16,0),
+          padding: const EdgeInsets.fromLTRB(16, 24, 16, 0),
           child: Column(
             children: [
               Expanded(
@@ -76,7 +74,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 8,),
+                        const SizedBox(
+                          height: 8,
+                        ),
                         TextFormField(
                           controller: emailController,
                           style: const TextStyle(
@@ -87,10 +87,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: const InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    width: 1,
-                                    color: Color.fromRGBO(151, 151, 151, 1),
-                                  )
-                              ),
+                                width: 1,
+                                color: Color.fromRGBO(151, 151, 151, 1),
+                              )),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   width: 1,
@@ -102,8 +101,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 fontFamily: 'Lato-Regular',
                                 fontSize: 16,
                                 color: Color.fromRGBO(83, 83, 83, 1),
-                              )
-                          ),
+                              )),
                         )
                       ],
                     ),
@@ -120,7 +118,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 8,),
+                        const SizedBox(
+                          height: 8,
+                        ),
                         TextFormField(
                           controller: passwordController,
                           style: const TextStyle(
@@ -131,10 +131,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: const InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    width: 1,
-                                    color: Color.fromRGBO(151, 151, 151, 1),
-                                  )
-                              ),
+                                width: 1,
+                                color: Color.fromRGBO(151, 151, 151, 1),
+                              )),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   width: 1,
@@ -146,11 +145,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 fontFamily: 'Lato-Regular',
                                 fontSize: 16,
                                 color: Color.fromRGBO(83, 83, 83, 1),
-                              )
-                          ),
+                              )),
                         )
                       ],
-                    ),Column(
+                    ),
+                    Column(
                       children: [
                         const SizedBox(
                           width: double.infinity,
@@ -163,7 +162,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 8,),
+                        const SizedBox(
+                          height: 8,
+                        ),
                         TextFormField(
                           style: const TextStyle(
                             fontFamily: 'Lato-Regular',
@@ -173,10 +174,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: const InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                    width: 1,
-                                    color: Color.fromRGBO(151, 151, 151, 1),
-                                  )
-                              ),
+                                width: 1,
+                                color: Color.fromRGBO(151, 151, 151, 1),
+                              )),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   width: 1,
@@ -188,8 +188,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 fontFamily: 'Lato-Regular',
                                 fontSize: 16,
                                 color: Color.fromRGBO(83, 83, 83, 1),
-                              )
-                          ),
+                              )),
                         )
                       ],
                     ),
@@ -197,12 +196,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       onPressed: _onRegister,
                       style: ElevatedButton.styleFrom(
                           minimumSize: const Size.fromHeight(50),
-                          backgroundColor: const Color.fromRGBO(136, 117, 255, 1),
+                          backgroundColor:
+                              const Color.fromRGBO(136, 117, 255, 1),
                           textStyle: const TextStyle(
                             fontFamily: 'Lato-Regular',
                             fontSize: 16,
-                          )
-                      ),
+                          )),
                       child: const Text('Register'),
                     ),
                   ],
@@ -244,17 +243,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 40,),
+                    const SizedBox(
+                      height: 40,
+                    ),
                     ElevatedButton.icon(
-                      onPressed: (){},
-                      icon: const Icon(FontAwesome5.google, color: Colors.red,),
+                      onPressed: () {},
+                      icon: const Icon(
+                        FontAwesome5.google,
+                        color: Colors.red,
+                      ),
                       label: const Text(
                         'Register with Google',
                         style: TextStyle(
                             fontFamily: 'Lato-Regular',
                             fontSize: 16,
-                            color: Color.fromRGBO(255, 255, 255, 0.87)
-                        ),
+                            color: Color.fromRGBO(255, 255, 255, 0.87)),
                       ),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size.fromHeight(50),
@@ -266,17 +269,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 24,),
+                    const SizedBox(
+                      height: 24,
+                    ),
                     ElevatedButton.icon(
-                      onPressed: (){},
-                      icon: const Icon(FontAwesome5.apple, color: Colors.white,),
+                      onPressed: () {},
+                      icon: const Icon(
+                        FontAwesome5.apple,
+                        color: Colors.white,
+                      ),
                       label: const Text(
                         'Register with Apple',
                         style: TextStyle(
                             fontFamily: 'Lato-Regular',
                             fontSize: 16,
-                            color: Color.fromRGBO(255, 255, 255, 0.87)
-                        ),
+                            color: Color.fromRGBO(255, 255, 255, 0.87)),
                       ),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size.fromHeight(50),
@@ -301,9 +308,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ),
                           ),
                           TextButton(
-                              onPressed: (){},
+                              onPressed: () {},
                               style: TextButton.styleFrom(
-                                minimumSize: const Size(1,1),
+                                minimumSize: const Size(1, 1),
                               ),
                               child: const Text(
                                 'Login',
@@ -312,8 +319,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   fontSize: 12,
                                   color: Color.fromRGBO(255, 255, 255, 0.87),
                                 ),
-                              )
-                          ),
+                              )),
                         ],
                       ),
                     )
@@ -322,7 +328,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
               )
             ],
           ),
-        )
-    );
+        ));
   }
 }
