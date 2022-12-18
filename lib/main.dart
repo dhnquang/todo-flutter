@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:todoapp/app/routes/widget_tree.dart';
 import 'firebase_options.dart';
 import 'package:todoapp/app/screens/splash/splash.dart';
 
-void main() async{
+Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
 }
+
+final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: const Splash(),
+      home: const WidgetTree(),
     );
   }
 }

@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import '../utils/showSnackBar.dart';
 
 class FirebaseAuthMethods {
-  final FirebaseAuth _auth;
-  FirebaseAuthMethods(this._auth);
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  User? get currentUser => _auth.currentUser;
+
+  Stream<User?> get authStateChanges => _auth.authStateChanges();
 
   //Email signup
   Future<void> signUpWithEmail({
@@ -19,7 +22,28 @@ class FirebaseAuthMethods {
         password: password,
       );
     } on FirebaseAuthException catch (e) {
-       showSnackBar(context, e.message!);
+      showSnackBar(context, e.message!);
     }
+  }
+
+  //Email sign in
+  Future<void> signInWithEmail({
+    required String email,
+    required String password,
+    required BuildContext context,
+  }) async {
+    try {
+      await _auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } on FirebaseAuthException catch (e) {
+      showSnackBar(context, e.message!);
+    }
+  }
+
+  //Sign out
+  Future<void> signOut() async {
+    await _auth.signOut();
   }
 }
