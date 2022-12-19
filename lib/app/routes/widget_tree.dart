@@ -21,7 +21,7 @@ class _WidgetTreeState extends State<WidgetTree> {
         if (snapshot.hasData) {
           return const BottomTabScreen();
         } else if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center (
+          return const Center(
             child: CircularProgressIndicator(),
           );
         } else if (snapshot.hasError) {

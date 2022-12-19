@@ -44,7 +44,17 @@ class _LoginScreenState extends State<LoginScreen> {
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 
-  void _googleLogin() {}
+  void _googleLogin() async {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+    await FirebaseAuthMethods().signInWithGoogle();
+    navigatorKey.currentState!.popUntil((route) => route.isFirst);
+  }
 
   void _appleLogin() {}
 
